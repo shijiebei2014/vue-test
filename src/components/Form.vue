@@ -24,14 +24,14 @@ export default {
   },
   methods: {
     submit2 () {
-      // this.$store.commit('user_save_action', {username: this.username, password: this.password})
-      // this.$store.dispatch('user_save_action', {username: this.username, password: this.password})
+      // this.$store.commit('userSaveAction', {username: this.username, password: this.password})
+      // this.$store.dispatch('userSaveAction', {username: this.username, password: this.password})
       this.submit({username: this.username, password: this.password})
       console.log('commit:', this.$store.state)
       this.$router.push({path: '/profile'})
     },
     ...mapActions({
-      submit: 'user_save_action'
+      submit: 'userSaveAction'
     })
   }
 }
