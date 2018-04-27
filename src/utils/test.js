@@ -18,10 +18,9 @@ methodsToPatch.forEach(function (method) {
     emunerable: true,
     writable: true,
     value: function () {
-      console.log(arguments)
       var args = Array.prototype.slice.call(arguments);
       const result = original.apply(this, args)
-
+      // 触发notify
       console.log('method: %s', method)
       return result;
     }
