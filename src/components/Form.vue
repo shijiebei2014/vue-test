@@ -9,17 +9,26 @@
     <br>
     <br>
     <input type="submit" name="submit" @click="submit2">
+
+    <div>
+      <child :text="text" :count="count"></child>
+    </div>
+
+     <router-link to="/test">跳转到test页面</router-link>
   </div>
 </template>
 
 <script>
+import child from './child'
 import {mapActions} from 'vuex'
 export default {
   name: 'Form',
   data () {
     return {
       username: '',
-      password: ''
+      password: '',
+      text: 'text',
+      count: '123456'
     }
   },
   methods: {
@@ -33,6 +42,9 @@ export default {
     ...mapActions({
       submit: 'userSaveAction'
     })
+  },
+  components: {
+    'child': child
   }
 }
 </script>
